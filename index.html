@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="title"> User Form</div>
+        <form action="#">
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Name</span>
+                    <input type="text" placeholder="Enter your name" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Username</span>
+                    <input type="text" placeholder="Enter your Username" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Email</span>
+                    <input type="email" placeholder="Enter your Email" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Phone Number</span>
+                    <input type="text" placeholder="Enter your name" required>
+                </div>
+                
+                <div class="input-box">
+                    <span class="details">Date</span>
+                    <input type="date" id=""  required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Budget</span>
+                    <input type="text" onkeyup="numberonly(this)" placeholder="Enter your budget" required>
+                        <script type="text/javascript">
+                            function numberonly(input){
+                            var num = /[^1-9]/gi;
+                            input.value = input.value.replace(num,"");
+                        }
+                    </script>
+                </div>
+                <div class="input-box">
+                    <span class="details">Prefered Location</span>
+                    <input type="text" placeholder="Enter and choose location bleow link" required>
+                    <a href="https://goo.gl/maps/HcqXSUgz4P66gQJj8">Google Map</a>
+                    
+                </div>
+                
+                <div class="checkbox-card">                    
+                    <span class="">I Know My Hotel</span>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="checkme">Yes
+                        </label>
+                    </div>
+                    <div class="passport-box">
+                        <input type="text" placeholder="Enter Text" 
+                        class="form-control">
+                    </div>
+                    <div class="apply-box">
+                    </div>
+                </div>
+            </div>        
+                
+<script src="jquery-latest.min.js"></script>
+<script>
+	$(function(){
+		$(".checkme").click(function(event) {
+			var x = $(this).is(':checked');
+			if (x == true) {
+				$(this).parents(".checkbox-card").find('.passport-box').show();
+				$(this).parents(".checkbox-card").find('.apply-box').hide();
+			}
+			else{
+				$(this).parents(".checkbox-card").find('.passport-box').hide();
+				$(this).parents(".checkbox-card").find('.apply-box').show();
+			}
+		});
+	});
+</script>
+                
+                <div class="gender-details">
+                    <span class="gender-title">Gender</span>
+                    <div class="category">
+                        <label for="Radio1">
+                            <input type="radio" class="radio-button" name="gender" id="Radio1">
+                            <span class="gender">Male</span>
+                        </label>
+                        <label for="Radio2">
+                            <input class="radio-button" type="radio" name="gender" id="Radio2">
+                            <span class="gender">Female</span>
+                        </label>
+                        <label for="Radio3">
+                            <input class="radio-button" type="radio" name="gender" id="Radio3">
+                            <span class="gender">Don't Say</span>
+                        </label>
+                    </div>  
+                </div>
+
+                <div class="button">
+                    <input type="submit" value="Submit">
+                </div>
+            
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
